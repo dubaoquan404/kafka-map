@@ -38,3 +38,4 @@ dashboard/node_modules
 
 /data/kafka-map.db
 /logs/
+/src/main/resources/static/
