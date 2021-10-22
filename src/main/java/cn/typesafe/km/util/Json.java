@@ -26,6 +26,6 @@ public class Json {
     public static <T> List<T> toJavaArray(String json) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        return objectMapper.readValue(json, new TypeReference<>() {});
+        return objectMapper.readValue(json, new TypeReference<List<T>>() {});
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -26,9 +27,10 @@ public class AccountController {
     @PostMapping("/login")
     public Map<String, Object> login(@RequestBody LoginAccount loginAccount) {
         String token = userService.login(loginAccount);
-        return Map.of(
-                "token", token
-        );
+        Map<String, Object> map = new HashMap<>();
+        map.put("token",token);
+        return map;
+//        return Map.of("token", token);
     }
 
     @PostMapping("/logout")
