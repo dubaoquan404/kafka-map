@@ -85,6 +85,17 @@ public class TopicController {
         topicService.createPartitions(clusterId, topic, totalCount);
     }
 
+    /**
+     * 拉去topic消费数据
+     * @param topic
+     * @param clusterId
+     * @param partition
+     * @param offset
+     * @param count
+     * @param keyFilter
+     * @param valueFilter
+     * @return
+     */
     @GetMapping("/{topic}/data")
     public List<ConsumerMessage> data(@PathVariable String topic, @RequestParam String clusterId,
                                       @RequestParam(defaultValue = "0") Integer partition,

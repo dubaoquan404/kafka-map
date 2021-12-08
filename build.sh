@@ -1,5 +1,6 @@
 cd web
-#npm install && npm run build
+yarn install
+yarn run build
 mv build ../src/main/resources/static
 #source ~/.bash_profile
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.7.jdk/Contents/Home

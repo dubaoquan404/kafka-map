@@ -259,7 +259,8 @@ class Cluster extends Component {
             title: <FormattedMessage id="servers"/>,
             dataIndex: 'servers',
             key: 'servers',
-        }, {
+        },
+   /*         {
             title: <FormattedMessage id="delay-message"/>,
             dataIndex: 'delayMessageStatus',
             key: 'delayMessageStatus',
@@ -278,7 +279,8 @@ class Cluster extends Component {
                 </Popover>
 
             }
-        }, {
+        }, */
+            {
             title: <FormattedMessage id="topic"/>,
             dataIndex: 'topicCount',
             key: 'topicCount',

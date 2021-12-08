@@ -61,13 +61,14 @@ public class BrokerService {
             List<TopicPartitionInfo> partitions = topicDescription.partitions();
             for (TopicPartitionInfo partitionInfo : partitions) {
                 Node leader = partitionInfo.leader();
-                for (Broker broker : brokers) {
-                    if (broker.getId() == leader.id()) {
-                        broker.getLeaderPartitions().add(partitionInfo.partition());
-                        break;
+                if(leader!=null){
+                    for (Broker broker : brokers) {
+                        if (broker.getId() == leader.id()) {
+                            broker.getLeaderPartitions().add(partitionInfo.partition());
+                            break;
+                        }
                     }
                 }
-
                 List<Node> replicas = partitionInfo.replicas();
                 for (Broker broker : brokers) {
                     for (Node replica : replicas) {

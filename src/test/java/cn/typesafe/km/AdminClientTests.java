@@ -21,7 +21,7 @@ class AdminClientTests {
     @BeforeEach
     void initKafka() {
         Properties properties = new Properties();
-        properties.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "10.1.5.84:9094");
+        properties.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "172.18.15.245:9092");
         properties.put(AdminClientConfig.REQUEST_TIMEOUT_MS_CONFIG, "5000");
         adminClient = AdminClient.create(properties);
     }
